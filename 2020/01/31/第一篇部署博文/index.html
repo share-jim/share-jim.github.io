@@ -16,7 +16,7 @@
 <meta property="og:description" content="在windows下如何部署hexo第一章 环境准备">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-01-30T18:37:44.000Z">
-<meta property="article:modified_time" content="2020-02-01T04:54:51.885Z">
+<meta property="article:modified_time" content="2020-02-01T05:09:11.850Z">
 <meta property="article:author" content="mklun">
 <meta name="twitter:card" content="summary">
   
@@ -199,7 +199,7 @@ hexo git</code></pre><h3 id="3-启动本地预览"><a href="#3-启动本地预�
 hexo g               //生成静态网站
 hexo d               //将现在的文件部署到github中</code></pre><h2 id="第六章-yilia相关设置"><a href="#第六章-yilia相关设置" class="headerlink" title="第六章 yilia相关设置"></a>第六章 yilia相关设置</h2><h3 id="1-Hexo-yilia-主题一揽子使用方案"><a href="#1-Hexo-yilia-主题一揽子使用方案" class="headerlink" title="1.Hexo yilia 主题一揽子使用方案"></a>1.<a href="https://cloudy-liu.github.io/2018/04/07/Hexo_yilia_%E4%B8%BB%E9%A2%98%E4%B8%80%E6%8F%BD%E5%AD%90%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88/" target="_blank" rel="noopener">Hexo yilia 主题一揽子使用方案</a></h3><p>主要包含缺失模块处理，配置图片资源，显示文章摘要，显示文章目录，增加归档菜单等</p>
 <h3 id="2-添加背景音乐"><a href="#2-添加背景音乐" class="headerlink" title="2.添加背景音乐"></a>2.<a href="https://joeybling.github.io/2019/05/09/Hexo%E5%8D%9A%E5%AE%A2yilia%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90(%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90)/" target="_blank" rel="noopener">添加背景音乐</a></h3><h3 id="3-处理微信分享异常"><a href="#3-处理微信分享异常" class="headerlink" title="3.处理微信分享异常"></a>3.<a href="http://dongshuyan.com/2019/05/24/hexo%E5%8D%9A%E5%AE%A2%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" target="_blank" rel="noopener">处理微信分享异常</a></h3><h3 id="4-添加Valine评论"><a href="#4-添加Valine评论" class="headerlink" title="4.添加Valine评论"></a>4.添加Valine评论</h3><p>a.申请App ID和App key</p>
-<p>在<a href="https://leancloud.cn/" target="_blank" rel="noopener">leancloud</a>官网注册登录，创建开发版的应用，然后在设置&gt;应用key即可看到app id和app key了。</p>
+<p>在<a href="https://leancloud.cn/" target="_blank" rel="noopener">leancloud</a>官网注册登录，创建开发版的应用，然后在设置&gt;应用key即可看到app id和app key了。在Leancloud -&gt; 设置 -&gt; 安全中心 -&gt; Web 安全域名 把你的域名加进去。</p>
 <p>b.首先我们在hexo\themes\yilia_config.yml中加入Valine的相关配置： </p>
 <pre><code># Valine.
 # You can get your appid and appkey from https://leancloud.cn
