@@ -116,8 +116,8 @@
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = 'https://raw.githubusercontent.com/dta0502/BlogPhotos/master/min_photos/' + data.link[i];
-          var src = 'https://raw.githubusercontent.com/dta0502/BlogPhotos/master/photos/' + data.link[i];
+          var minSrc = 'https://raw.githubusercontent.com/share-jim/backphoto/master/min_photos/' + data.link[i];
+          var src = 'https://raw.githubusercontent.com/share-jim/backphoto/master/photos/' + data.link[i];
           var type = data.type[i];
           var target = src + (type === 'video' ? '.mp4' : '.jpg');
           src += '';
