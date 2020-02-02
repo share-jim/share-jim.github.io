@@ -157,6 +157,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-mysql改密码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/02/02/mysql%E6%94%B9%E5%AF%86%E7%A0%81/">mysql改密码</a>
+    </h1>
+  
+
+        
+        <a href="/2020/02/02/mysql%E6%94%B9%E5%AF%86%E7%A0%81/" class="archive-article-date">
+  	<time datetime="2020-02-02T12:30:18.762Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="mysql8-0-18改密码"><a href="#mysql8-0-18改密码" class="headerlink" title="mysql8.0.18改密码"></a>mysql8.0.18改密码</h1><h2 id="1-管理员身份进入dos"><a href="#1-管理员身份进入dos" class="headerlink" title="1.管理员身份进入dos"></a>1.管理员身份进入dos</h2><h2 id="2-停止mysql服务"><a href="#2-停止mysql服务" class="headerlink" title="2.停止mysql服务"></a>2.停止mysql服务</h2><pre><code>net stop mysql</code></pre><h2 id="3-无密码启动"><a href="#3-无密码启动" class="headerlink" title="3.无密码启动"></a>3.无密码启动</h2><pre><code>C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysqld --console --skip-grant-tables --shared-memory</code></pre><h2 id="4-另启一个dos窗口，无密码登录"><a href="#4-另启一个dos窗口，无密码登录" class="headerlink" title="4.另启一个dos窗口，无密码登录"></a>4.另启一个dos窗口，无密码登录</h2><pre><code>C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysql -u root</code></pre><h2 id="5-然后执行sql命令将root用户密码设置为空"><a href="#5-然后执行sql命令将root用户密码设置为空" class="headerlink" title="5.然后执行sql命令将root用户密码设置为空"></a>5.然后执行sql命令将root用户密码设置为空</h2><pre><code>mysql&gt;UPDATE mysql.user SET authentication_string=&apos;&apos; WHERE user=&apos;root&apos; and host=&apos;localhost&apos;;</code></pre><h2 id="6-启动服务"><a href="#6-启动服务" class="headerlink" title="6.启动服务"></a>6.启动服务</h2><p>关闭打开的两个dos窗口，然后以管理员身份重新打开一个dos窗口，启动服务</p>
+<pre><code>net start mysql</code></pre><h2 id="7-无密码登录"><a href="#7-无密码登录" class="headerlink" title="7.无密码登录"></a>7.无密码登录</h2><pre><code>C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysql -u root</code></pre><h2 id="8-重新设置密码"><a href="#8-重新设置密码" class="headerlink" title="8.重新设置密码"></a>8.重新设置密码</h2><pre><code>mysql&gt;alter user root@localhost identified by &apos;root’;</code></pre><p>(mysql&gt;ALTER user ‘root’@’localhost’ IDENTIFIED BY ‘新密码’;)</p>
+<h2 id="9-新密码登录"><a href="#9-新密码登录" class="headerlink" title="9.新密码登录"></a>9.新密码登录</h2><pre><code>C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysql -u root -proot</code></pre><p>参考：</p>
+<p><a href="https://blog.csdn.net/evanzzxcw/article/details/102795361" target="_blank" rel="noopener">https://blog.csdn.net/evanzzxcw/article/details/102795361</a><br><a href="https://blog.csdn.net/qq_38712932/article/details/83025733" target="_blank" rel="noopener">https://blog.csdn.net/qq_38712932/article/details/83025733</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/02/02/mysql%E6%94%B9%E5%AF%86%E7%A0%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+  <section id="comments" class="comments">
+    <style>
+      .comments{margin:30px;padding:10px;background:#fff}
+      @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+    </style>
+    <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "i70ShfNKygx3YLbNuJGOzd73-gzGzoHsz",
+            app_key: "hiiwV7bH9Q3El1zcPFWtK5TQ",
+            placeholder: "请在此输入您的留言",
+            avatar:"mm"
+        });
+    }
+</script>
+    </section>
+  
+  
     <article id="post-第一篇部署博文" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
