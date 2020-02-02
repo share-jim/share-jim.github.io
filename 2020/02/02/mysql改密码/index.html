@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>mysql改密码 | 不期而遇</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="mysql8.0.18改密码1.管理员身份进入dos2.停止mysql服务net stop mysql3.无密码启动C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysqld --console --skip-grant-tables --shared-memory4.另启一个dos窗口，无密码登录C:\Windows\S">
+  <meta name="description" content="mysql8.0.18改密码1.管理员身份进入dos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql改密码">
 <meta property="og:url" content="http://yoursite.com/2020/02/02/mysql%E6%94%B9%E5%AF%86%E7%A0%81/index.html">
 <meta property="og:site_name" content="不期而遇">
-<meta property="og:description" content="mysql8.0.18改密码1.管理员身份进入dos2.停止mysql服务net stop mysql3.无密码启动C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysqld --console --skip-grant-tables --shared-memory4.另启一个dos窗口，无密码登录C:\Windows\S">
+<meta property="og:description" content="mysql8.0.18改密码1.管理员身份进入dos">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-02T12:30:18.762Z">
-<meta property="article:modified_time" content="2020-02-02T12:39:25.172Z">
+<meta property="article:modified_time" content="2020-02-02T12:44:43.726Z">
 <meta property="article:author" content="mklun">
 <meta name="twitter:card" content="summary">
   
@@ -179,7 +179,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="mysql8-0-18改密码"><a href="#mysql8-0-18改密码" class="headerlink" title="mysql8.0.18改密码"></a>mysql8.0.18改密码</h1><h2 id="1-管理员身份进入dos"><a href="#1-管理员身份进入dos" class="headerlink" title="1.管理员身份进入dos"></a>1.管理员身份进入dos</h2><h2 id="2-停止mysql服务"><a href="#2-停止mysql服务" class="headerlink" title="2.停止mysql服务"></a>2.停止mysql服务</h2><pre><code>net stop mysql</code></pre><h2 id="3-无密码启动"><a href="#3-无密码启动" class="headerlink" title="3.无密码启动"></a>3.无密码启动</h2><pre><code>C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysqld --console --skip-grant-tables --shared-memory</code></pre><h2 id="4-另启一个dos窗口，无密码登录"><a href="#4-另启一个dos窗口，无密码登录" class="headerlink" title="4.另启一个dos窗口，无密码登录"></a>4.另启一个dos窗口，无密码登录</h2><pre><code>C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysql -u root</code></pre><h2 id="5-然后执行sql命令将root用户密码设置为空"><a href="#5-然后执行sql命令将root用户密码设置为空" class="headerlink" title="5.然后执行sql命令将root用户密码设置为空"></a>5.然后执行sql命令将root用户密码设置为空</h2><pre><code>mysql&gt;UPDATE mysql.user SET authentication_string=&apos;&apos; WHERE user=&apos;root&apos; and host=&apos;localhost&apos;;</code></pre><h2 id="6-启动服务"><a href="#6-启动服务" class="headerlink" title="6.启动服务"></a>6.启动服务</h2><p>关闭打开的两个dos窗口，然后以管理员身份重新打开一个dos窗口，启动服务</p>
+        <h1 id="mysql8-0-18改密码"><a href="#mysql8-0-18改密码" class="headerlink" title="mysql8.0.18改密码"></a>mysql8.0.18改密码</h1><h2 id="1-管理员身份进入dos"><a href="#1-管理员身份进入dos" class="headerlink" title="1.管理员身份进入dos"></a>1.管理员身份进入dos</h2><a id="more"></a>
+<h2 id="2-停止mysql服务"><a href="#2-停止mysql服务" class="headerlink" title="2.停止mysql服务"></a>2.停止mysql服务</h2><pre><code>net stop mysql</code></pre><h2 id="3-无密码启动"><a href="#3-无密码启动" class="headerlink" title="3.无密码启动"></a>3.无密码启动</h2><pre><code>C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysqld --console --skip-grant-tables --shared-memory</code></pre><h2 id="4-另启一个dos窗口，无密码登录"><a href="#4-另启一个dos窗口，无密码登录" class="headerlink" title="4.另启一个dos窗口，无密码登录"></a>4.另启一个dos窗口，无密码登录</h2><pre><code>C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysql -u root</code></pre><h2 id="5-然后执行sql命令将root用户密码设置为空"><a href="#5-然后执行sql命令将root用户密码设置为空" class="headerlink" title="5.然后执行sql命令将root用户密码设置为空"></a>5.然后执行sql命令将root用户密码设置为空</h2><pre><code>mysql&gt;UPDATE mysql.user SET authentication_string=&apos;&apos; WHERE user=&apos;root&apos; and host=&apos;localhost&apos;;</code></pre><h2 id="6-启动服务"><a href="#6-启动服务" class="headerlink" title="6.启动服务"></a>6.启动服务</h2><p>关闭打开的两个dos窗口，然后以管理员身份重新打开一个dos窗口，启动服务</p>
 <pre><code>net start mysql</code></pre><h2 id="7-无密码登录"><a href="#7-无密码登录" class="headerlink" title="7.无密码登录"></a>7.无密码登录</h2><pre><code>C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysql -u root</code></pre><h2 id="8-重新设置密码"><a href="#8-重新设置密码" class="headerlink" title="8.重新设置密码"></a>8.重新设置密码</h2><pre><code>mysql&gt;alter user root@localhost identified by &apos;root’;</code></pre><p>(mysql&gt;ALTER user ‘root’@’localhost’ IDENTIFIED BY ‘新密码’;)</p>
 <h2 id="9-新密码登录"><a href="#9-新密码登录" class="headerlink" title="9.新密码登录"></a>9.新密码登录</h2><pre><code>C:\Windows\System32&gt;D:\install\MySQL\MySQL Server 8.0\bin\mysql -u root -proot</code></pre><p>参考：</p>
 <p><a href="https://blog.csdn.net/evanzzxcw/article/details/102795361" target="_blank" rel="noopener">https://blog.csdn.net/evanzzxcw/article/details/102795361</a><br><a href="https://blog.csdn.net/qq_38712932/article/details/83025733" target="_blank" rel="noopener">https://blog.csdn.net/qq_38712932/article/details/83025733</a></p>
