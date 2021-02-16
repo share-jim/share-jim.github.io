@@ -8,16 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>mysql-基础 | 不期而遇</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1. 用户和权限1.1. 用户管理12345678-- 用户创建create user &#39;用户名&#39;@&#39;ip地址&#39; indentified by &#39;密码&#39;;  -- 删除用户drop user &#39;用户名&#39;@&#39;ip地址&#39;;-- 修改用户rename user &#39;用户名&#39;@&#39;ip地址&#39; to">
+  <meta name="description" content="1. 用户和权限">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql-基础">
 <meta property="og:url" content="http://yoursite.com/2020/03/11/mysql-%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="不期而遇">
-<meta property="og:description" content="1. 用户和权限1.1. 用户管理12345678-- 用户创建create user &#39;用户名&#39;@&#39;ip地址&#39; indentified by &#39;密码&#39;;  -- 删除用户drop user &#39;用户名&#39;@&#39;ip地址&#39;;-- 修改用户rename user &#39;用户名&#39;@&#39;ip地址&#39; to">
+<meta property="og:description" content="1. 用户和权限">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-03-11T10:36:17.000Z">
-<meta property="article:modified_time" content="2020-04-02T03:22:56.809Z">
+<meta property="article:modified_time" content="2021-02-16T08:28:26.567Z">
 <meta property="article:author" content="mklun">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="不期而遇" type="application/atom+xml">
@@ -179,7 +180,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-用户和权限"><a href="#1-用户和权限" class="headerlink" title="1. 用户和权限"></a>1. 用户和权限</h2><h3 id="1-1-用户管理"><a href="#1-1-用户管理" class="headerlink" title="1.1. 用户管理"></a>1.1. 用户管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 用户创建</span><br><span class="line">create user &#39;用户名&#39;@&#39;ip地址&#39; indentified by &#39;密码&#39;;  </span><br><span class="line">-- 删除用户</span><br><span class="line">drop user &#39;用户名&#39;@&#39;ip地址&#39;;</span><br><span class="line">-- 修改用户</span><br><span class="line">rename user &#39;用户名&#39;@&#39;ip地址&#39; to &#39;新用户名&#39;@&#39;ip地址&#39;;;</span><br><span class="line">-- 修改密码</span><br><span class="line">set user password for &#39;用户名&#39;@&#39;ip地址&#39; &#x3D; Password(&#39;新密码&#39;);</span><br></pre></td></tr></table></figure>
+        <h2 id="1-用户和权限"><a href="#1-用户和权限" class="headerlink" title="1. 用户和权限"></a>1. 用户和权限</h2><a id="more"></a>
+<h3 id="1-1-用户管理"><a href="#1-1-用户管理" class="headerlink" title="1.1. 用户管理"></a>1.1. 用户管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 用户创建</span><br><span class="line">create user &#39;用户名&#39;@&#39;ip地址&#39; indentified by &#39;密码&#39;;  </span><br><span class="line">-- 删除用户</span><br><span class="line">drop user &#39;用户名&#39;@&#39;ip地址&#39;;</span><br><span class="line">-- 修改用户</span><br><span class="line">rename user &#39;用户名&#39;@&#39;ip地址&#39; to &#39;新用户名&#39;@&#39;ip地址&#39;;;</span><br><span class="line">-- 修改密码</span><br><span class="line">set user password for &#39;用户名&#39;@&#39;ip地址&#39; &#x3D; Password(&#39;新密码&#39;);</span><br></pre></td></tr></table></figure>
 <p>#ip地址的多种形式   ‘192.1.1.1’ 、 ‘192.1.1.%’–%表示任意字符 、’%’任意主机  </p>
 <h3 id="1-2-权限管理"><a href="#1-2-权限管理" class="headerlink" title="1.2. 权限管理"></a>1.2. 权限管理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">-- 查看权限</span><br><span class="line">show grant for &#39;用户名&#39;@&#39;ip地址&#39;;</span><br><span class="line">-- 赋予权限</span><br><span class="line">grant 权限 on 数据库名.表名 &#39;用户名&#39;@&#39;ip地址&#39; ;</span><br><span class="line">-- 取消权限</span><br><span class="line">revoke 权限 on 数据库名.表名 &#39;用户名&#39;@&#39;ip地址&#39;;</span><br></pre></td></tr></table></figure>
 <p>#权限:all privileges除了赋予权限以外的所有的权限  select查 insert增 update改</p>
@@ -264,6 +266,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       <span id="busuanzi_container_page_pv">
         |阅读量：<span id="busuanzi_value_page_pv"></span>次
       </span>
